@@ -132,24 +132,40 @@ def Single():
         banner()
         try:
             Encoded_File = raw_input("   Enter your Text : ")
+	    redecoded = raw_input("	Re Decode :  ")
             decoded_line = binascii.a2b_base64(Encoded_File.strip())
-            print('\033[35m' + "\n\n base64 Decoded ! \n\n")
-            print('\033[32m' + " Result : " + '\033[31m' + decoded_line)
-            print('\033[37m')
+	    print('\033[35m' + "\n\n base64 Decoded ! \n\n")
+	    print('\033[32m' + " Result : " + '\033[31m' + decoded_line)
+	    print('\033[37m')
+	    if (int(redecoded)>int(1)):
+		    for x in range(int(1),int(redecoded)):
+		    		decoded_line = binascii.a2b_base64(decoded_line.strip())
+				print('\033[35m' + "\n\n base64 Decoded ! \n\n")
+				print('\033[32m' + " Result : " + '\033[31m' + decoded_line)
+				print('\033[37m')
+	    
         except:
-            pass
+            
+                        	pass
 
     def base64_EnCode():
         cls()
         banner()
         try:
             Decoded_File = raw_input("   Enter your Text : ")
-            decoded_line = binascii.b2a_base64(Decoded_File.strip())
-            print('\033[35m' + "\n\n base64 Encoded ! \n\n")
-            print('\033[32m' + " Result : " + '\033[31m' + decoded_line)
-            print('\033[37m')
-        except:
-            pass
+	    redecoded = raw_input("	Re Encode :  ")
+	    decoded_line = binascii.b2a_base64(Decoded_File.strip())
+	    print('\033[35m' + "\n\n base64 Encoded ! \n\n")
+	    print('\033[32m' + " Result : " + '\033[31m' + decoded_line)
+	    print('\033[37m')
+	    if (int(redecoded)>int(1)):
+		    for x in range(int(1),int(redecoded)):
+				decoded_line=binascii.b2a_base64(decoded_line.strip())
+				print('\033[35m' + "\n\n base64 Encoded ! \n\n")
+				print('\033[32m' + " Result : " + '\033[31m' + decoded_line)
+				print('\033[37m')
+	except:
+	    			pass
 
     cls()
     banner()
